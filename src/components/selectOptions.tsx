@@ -36,8 +36,8 @@ interface Location {
   country: string | null;
 }
 interface SelectOptionsProps {
-  selectedFromUser: Location;
-  selectedToUser: Location;
+  selectedFromUser: Location | undefined;
+  selectedToUser: Location | undefined;
   departureDateUser: Date | undefined;
   returnDateUser: Date | undefined;
   toggle: () => void;
