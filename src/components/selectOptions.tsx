@@ -126,16 +126,7 @@ const SelectOptions = ({
     router.push("/flights");
   };
   return (
-    <div
-    //   className="mx-auto max-w-full border-2 rounded-lg flex flex-col px-4 sm:px-10 py-12 relative"
-    //   style={{
-    //     boxShadow: `
-    //     0px 1px 11px 3px #0000000F,
-    //     0px 19px 19.4px 0px #00000005,
-    //     0px -6px 22.6px 0px #FFFFFF
-    //   `,
-    //   }}
-    >
+    <div>
       <div className="mb-4">
         <div className="px-6 bg-[#F5F7FA] w-24 text-center text-sm py-2 rounded-md font-medium">
           Flights
