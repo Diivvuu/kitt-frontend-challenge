@@ -1,6 +1,7 @@
 import emirates from "@/icons/emirates.png";
 import lufthansa from "@/icons/lufthansa.png";
 import { Flight } from "./interfaces";
+
 const flightsData: Flight[] = [
   {
     id: 1,
@@ -12,6 +13,8 @@ const flightsData: Flight[] = [
       date: "2024-10-08",
       time: "10:00 AM",
       stops: 1,
+      stopCity: "Dubai",
+      stopDuration: "2h",
       duration: "6h 30m",
     },
     return: {
@@ -23,7 +26,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "2h 00m",
     },
-    priceRange: "$200 - $350",
+    priceRange: "AED 200 - AED 350",
     totalDays: 1,
   },
   {
@@ -47,7 +50,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "7h 30m",
     },
-    priceRange: "$500 - $700",
+    priceRange: "AED 500 - AED 700",
     totalDays: 1,
   },
   {
@@ -69,9 +72,11 @@ const flightsData: Flight[] = [
       date: "2024-10-27",
       time: "10:00 AM",
       stops: 1,
+      stopCity: "Tokyo",
+      stopDuration: "3h",
       duration: "14h 00m",
     },
-    priceRange: "$800 - $1,200",
+    priceRange: "AED 800 - AED 1,200",
     totalDays: 2,
   },
   {
@@ -84,6 +89,8 @@ const flightsData: Flight[] = [
       date: "2024-11-01",
       time: "6:00 AM",
       stops: 1,
+      stopCity: "Singapore",
+      stopDuration: "4h",
       duration: "15h 00m",
     },
     return: {
@@ -93,9 +100,11 @@ const flightsData: Flight[] = [
       date: "2024-11-08",
       time: "3:00 PM",
       stops: 1,
+      stopCity: "Dubai",
+      stopDuration: "3h",
       duration: "16h 30m",
     },
-    priceRange: "$1,000 - $1,500",
+    priceRange: "AED 1,000 - AED 1,500",
     totalDays: 2,
   },
   {
@@ -119,7 +128,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "10h 45m",
     },
-    priceRange: "$900 - $1,100",
+    priceRange: "AED 900 - AED 1,100",
     totalDays: 1,
   },
   {
@@ -132,6 +141,8 @@ const flightsData: Flight[] = [
       date: "2024-11-05",
       time: "7:30 AM",
       stops: 1,
+      stopCity: "Paris",
+      stopDuration: "1h 30m",
       duration: "9h 45m",
     },
     return: {
@@ -141,9 +152,11 @@ const flightsData: Flight[] = [
       date: "2024-11-12",
       time: "10:00 PM",
       stops: 1,
+      stopCity: "Doha",
+      stopDuration: "2h",
       duration: "8h 30m",
     },
-    priceRange: "$600 - $950",
+    priceRange: "AED 600 - AED 950",
     totalDays: 1,
   },
   {
@@ -165,9 +178,11 @@ const flightsData: Flight[] = [
       date: "2024-11-16",
       time: "5:00 AM",
       stops: 0,
+      stopCity: "Dubai",
+      stopDuration: "2h",
       duration: "7h 10m",
     },
-    priceRange: "$700 - $1,000",
+    priceRange: "AED 700 - AED 1,000",
     totalDays: 1,
   },
   {
@@ -180,6 +195,8 @@ const flightsData: Flight[] = [
       date: "2024-10-23",
       time: "9:00 AM",
       stops: 1,
+      stopCity: "Dubai",
+      stopDuration: "2h",
       duration: "11h 00m",
     },
     return: {
@@ -191,7 +208,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "2h 15m",
     },
-    priceRange: "$400 - $750",
+    priceRange: "AED 400 - AED 750",
     totalDays: 2,
   },
   {
@@ -204,6 +221,8 @@ const flightsData: Flight[] = [
       date: "2024-10-12",
       time: "6:00 PM",
       stops: 1,
+      stopCity: "Dubai",
+      stopDuration: "2h",
       duration: "15h 30m",
     },
     return: {
@@ -215,7 +234,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "11h 45m",
     },
-    priceRange: "$850 - $1,200",
+    priceRange: "AED 850 - AED 1,200",
     totalDays: 2,
   },
   {
@@ -236,10 +255,10 @@ const flightsData: Flight[] = [
       cityCode: "Sydney",
       date: "2024-11-10",
       time: "11:00 AM",
-      stops: 1,
+      stops: 0,
       duration: "13h 15m",
     },
-    priceRange: "$950 - $1,350",
+    priceRange: "AED 950 - AED 1,350",
     totalDays: 1,
   },
   {
@@ -251,7 +270,7 @@ const flightsData: Flight[] = [
       cityCode: "Sydney",
       date: "2024-12-01",
       time: "5:00 AM",
-      stops: 1,
+      stops: 0,
       duration: "15h 45m",
     },
     return: {
@@ -263,7 +282,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "13h 00m",
     },
-    priceRange: "$1,100 - $1,700",
+    priceRange: "AED 1,100 - AED 1,700",
     totalDays: 3,
   },
   {
@@ -287,7 +306,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "7h 30m",
     },
-    priceRange: "$650 - $900",
+    priceRange: "AED 650 - AED 900",
     totalDays: 2,
   },
   {
@@ -299,7 +318,7 @@ const flightsData: Flight[] = [
       cityCode: "New Delhi",
       date: "2024-10-14",
       time: "9:00 AM",
-      stops: 1,
+      stops: 0,
       duration: "11h 45m",
     },
     return: {
@@ -309,9 +328,11 @@ const flightsData: Flight[] = [
       date: "2024-10-21",
       time: "1:00 PM",
       stops: 1,
+      stopCity: "Dubai",
+      stopDuration: "2h",
       duration: "12h 30m",
     },
-    priceRange: "$500 - $900",
+    priceRange: "AED 500 - AED 900",
     totalDays: 2,
   },
   {
@@ -324,6 +345,8 @@ const flightsData: Flight[] = [
       date: "2024-11-10",
       time: "4:00 PM",
       stops: 1,
+      stopCity: "Dubai",
+      stopDuration: "2h",
       duration: "11h 00m",
     },
     return: {
@@ -335,7 +358,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "18h 00m",
     },
-    priceRange: "$1,100 - $1,500",
+    priceRange: "AED 1,100 - AED 1,500",
     totalDays: 3,
   },
   {
@@ -359,7 +382,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "9h 00m",
     },
-    priceRange: "$900 - $1,300",
+    priceRange: "AED 900 - AED 1,300",
     totalDays: 2,
   },
   {
@@ -380,10 +403,10 @@ const flightsData: Flight[] = [
       cityCode: "Los Angeles",
       date: "2024-11-22",
       time: "4:00 PM",
-      stops: 1,
+      stops: 0,
       duration: "10h 30m",
     },
-    priceRange: "$850 - $1,250",
+    priceRange: "AED 850 - AED 1,250",
     totalDays: 2,
   },
   {
@@ -407,7 +430,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "22h 45m",
     },
-    priceRange: "$1,200 - $1,600",
+    priceRange: "AED 1,200 - AED 1,600",
     totalDays: 3,
   },
   {
@@ -419,7 +442,7 @@ const flightsData: Flight[] = [
       cityCode: "Singapore",
       date: "2024-12-08",
       time: "1:00 PM",
-      stops: 1,
+      stops: 0,
       duration: "19h 00m",
     },
     return: {
@@ -431,7 +454,7 @@ const flightsData: Flight[] = [
       stops: 0,
       duration: "12h 45m",
     },
-    priceRange: "$900 - $1,200",
+    priceRange: "AED 900 - AED 1,200",
     totalDays: 3,
   },
   {
@@ -452,10 +475,10 @@ const flightsData: Flight[] = [
       cityCode: "New York",
       date: "2024-12-12",
       time: "1:00 PM",
-      stops: 1,
+      stops: 0,
       duration: "18h 30m",
     },
-    priceRange: "$850 - $1,150",
+    priceRange: "AED 850 - AED 1,150",
     totalDays: 2,
   },
   {
@@ -465,22 +488,22 @@ const flightsData: Flight[] = [
       flightNumber: "CX908",
       airportCode: "HKG",
       cityCode: "Hong Kong",
-      date: "2024-12-10",
-      time: "2:30 PM",
+      date: "2024-12-14",
+      time: "9:00 AM",
       stops: 0,
-      duration: "11h 15m",
+      duration: "9h 30m",
     },
     return: {
       flightNumber: "CX909",
-      airportCode: "SYD",
-      cityCode: "Sydney",
-      date: "2024-12-17",
-      time: "9:00 AM",
-      stops: 1,
-      duration: "7h 45m"
+      airportCode: "DEL",
+      cityCode: "New Delhi",
+      date: "2024-12-21",
+      time: "12:00 PM",
+      stops: 0,
+      duration: "10h 30m",
     },
-    priceRange: "$950 - $1,450",
-    totalDays: 3,
+    priceRange: "AED 950 - AED 1,250",
+    totalDays: 2,
   },
 ];
 

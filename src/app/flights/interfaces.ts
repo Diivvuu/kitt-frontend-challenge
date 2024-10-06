@@ -10,6 +10,8 @@ export interface Flight {
     date: string;
     time: string;
     stops: number;
+    stopCity?: string;
+    stopDuration?: string;
     duration: string;
   };
   return: {
@@ -19,6 +21,8 @@ export interface Flight {
     date: string;
     time: string;
     stops: number;
+    stopCity?: string;
+    stopDuration?: string;
     duration: string;
   };
   priceRange: string;
