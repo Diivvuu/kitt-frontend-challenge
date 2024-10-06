@@ -1,15 +1,22 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./shimmer.css";
 import plane from "@/icons/plane.png";
 import Image from "next/image";
 const Shimmer = () => {
-  const shimmerCount = Math.floor((window.innerHeight - 200) / 200);
+  const [shimmerCount, setShimmerCount] = useState(0);
+
   useEffect(() => {
+    // Calculate shimmerCount only in the client
+    const count = Math.floor((window.innerHeight - 200) / 200);
+    setShimmerCount(count);
+
+    // Disable scroll
     document.body.style.overflow = "hidden";
 
+    // Cleanup function to restore scroll on unmount
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "unset";
     };
   }, []);
   return (
@@ -18,9 +25,9 @@ const Shimmer = () => {
       <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 bg-white shadow-lg rounded-xl flex flex-col items-center">
         <Image src={plane} alt="plane icon" />
         <div className="flex flex-col justify-center items-center text-[#787B80] text-lg pb-2 px-4">
-          <p className="">Please make sure you search something</p>
-          <p className="">We'll search 400+ flights</p>
-          <p className="">We'll serve you best results</p>
+          <p>Please make sure you search something</p>
+          <p>We'll search 400+ flights</p>
+          <p>We'll serve you best results</p>
         </div>
       </div>
 

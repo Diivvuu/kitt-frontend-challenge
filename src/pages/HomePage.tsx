@@ -1,10 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
-
-import { airports } from "@/data/airports";
 
 import { useRouter } from "next/navigation";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import {
   setFromAc,
   setToAc,

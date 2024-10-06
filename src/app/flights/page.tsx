@@ -4,7 +4,7 @@ import FlightPanel from "./flight-panel";
 import { useSelector } from "react-redux";
 import Shimmer from "./flight-panel-shimmer";
 
-const page = () => {
+const Page = () => {
   const selectedFrom = useSelector(
     (state: { flight: { selectedFrom: Location } }) => state.flight.selectedFrom
   );
@@ -30,4 +30,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
