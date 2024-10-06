@@ -1,7 +1,5 @@
 "use client";
-
-import { flightsData } from "@/app/flights/flights"; // Correct path to the flight data
-import Image from "next/image";
+import { flightsData } from "@/app/flights/flights"; 
 import FlightsCard from "./flight-card";
 
 const FlightPanel = () => {

@@ -1,5 +1,4 @@
-// src/app/flights/layout.tsx
-"use client"; // This is necessary because we are using the Provider, which is a client component
+"use client";
 import { Provider } from "react-redux";
 import store from "@/store/store";
 

@@ -4,17 +4,15 @@ import Image from "next/image";
 import emirates from "@/icons/emirates.png";
 import lufthansa from "@/icons/lufthansa.png";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Search } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-// import plusOneIcon from "@/icons/plus-one-icon.png"; // Import your +1 icon here
 
 interface FlightCardProps {
   flight: Flight;
@@ -23,10 +21,8 @@ interface FlightCardProps {
 const parseDuration = (duration: string) => {
   const parts = duration.split("h");
 
-  // Handle hours
   const hours = parts[0] ? parseInt(parts[0], 10) : 0;
 
-  // Handle minutes
   const minutes = parts[1] ? parseInt(parts[1], 10) : 0;
 
   return { hours, minutes };
@@ -37,28 +33,24 @@ const calculateEndTime = (departureTime: string, duration: string) => {
   let [hours, minutes] = time.split(":").map(Number);
 
   if (modifier === "PM" && hours < 12) {
-    hours += 12; // Convert PM hour to 24-hour format
+    hours += 12;
   } else if (modifier === "AM" && hours === 12) {
-    hours = 0; // Midnight case
+    hours = 0;
   }
 
   const { hours: durationHours, minutes: durationMinutes } =
     parseDuration(duration);
 
-  // Calculate total time in minutes
   const totalMinutes =
     hours * 60 + minutes + (durationHours * 60 + durationMinutes);
 
-  // Convert back to hours and minutes
   const endHours = Math.floor(totalMinutes / 60);
   const endMinutes = totalMinutes % 60;
 
-  // Determine if end time is on the next day
   const isNextDay = endHours >= 24;
 
-  // Format back to 12-hour format
   const endModifier = endHours % 24 >= 12 ? "PM" : "AM";
-  const formattedEndHours = endHours % 12 === 0 ? 12 : endHours % 12; // 12-hour format
+  const formattedEndHours = endHours % 12 === 0 ? 12 : endHours % 12;
 
   return {
     formattedTime: `${formattedEndHours}:${String(endMinutes).padStart(
@@ -78,34 +70,32 @@ const FlightsCard = ({ flight }: FlightCardProps) => {
   const formatDate = (dateString: string | Date) => {
     const date = new Date(dateString);
     const options: Intl.DateTimeFormatOptions = {
-      weekday: "short", // Tue
-      day: "2-digit", // 08
-      month: "short", // Oct
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
     };
 
     const parts = date.toLocaleDateString("en-US", options).split(", ");
-    return `${parts[0]} ${parts[1]}`; // Manually join without a comma
+    return `${parts[0]} ${parts[1]}`;
   };
 
   const departureDate = new Date(flight.departure.date);
 
   if (isNextDayDeparture) {
-    departureDate.setDate(departureDate.getDate() + 1); // Add one day
+    departureDate.setDate(departureDate.getDate() + 1);
   }
   const returnDate = new Date(flight.return.date);
 
   if (isNextDayReturn) {
-    returnDate.setDate(returnDate.getDate() + 1); // Add one day
+    returnDate.setDate(returnDate.getDate() + 1);
   }
 
-  // Format the date after potentially modifying it
   const ifNextDepartureDate = formatDate(departureDate);
   const ifNextReturnDate = formatDate(returnDate);
   return (
     <Sheet>
       <div className="flex items-stretch w-full mx-auto">
         <div className="flex flex-col justify-between border-2 py-3 px-6 rounded-l-lg flex-grow">
-          {/* Departure Information */}
           <div className="flex flex-col mb-2">
             <div className="text-sm text-[#787B80] font-semibold">
               {formatDate(flight.departure.date)}
@@ -167,11 +157,10 @@ const FlightsCard = ({ flight }: FlightCardProps) => {
             </div>
           </div>
 
-          {/* Return Information */}
           <div className="flex items-start mt-2 ml-4">
             <div className="min-w-[50px]">
               <Image
-                src={flight.airlineLogo} // Ensure return flight logo is provided
+                src={flight.airlineLogo}
                 height={50}
                 width={50}
                 alt="flight logo"

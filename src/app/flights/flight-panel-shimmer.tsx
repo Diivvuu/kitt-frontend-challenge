@@ -4,12 +4,10 @@ import "./shimmer.css";
 import plane from "@/icons/plane.png";
 import Image from "next/image";
 const Shimmer = () => {
-  const shimmerCount = Math.floor((window.innerHeight - 200) / 200); // Calculate number of cards based on viewport height// Number of shimmer components to render
+  const shimmerCount = Math.floor((window.innerHeight - 200) / 200);
   useEffect(() => {
-    // Prevent scrolling by hiding overflow on the body
     document.body.style.overflow = "hidden";
 
-    // Cleanup function to reset overflow on component unmount
     return () => {
       document.body.style.overflow = "auto";
     };
